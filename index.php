@@ -35,7 +35,7 @@ function start()
         $letter = mb_strtolower(readline("Enter letter: "));
         $game->makeGuess($letter);
         if ($game->isGameOver()) {
-            echo 'Закончились ходы, игра закончена!';
+            echo 'Закончились ходы, вы проиграли! Слово было: '.$game->word->originWord;
             echo PHP_EOL;
             break;
         }

@@ -15,14 +15,6 @@ class Game
         $this->attempts= $attempts;
         $this->player->attemptsLeft = $attempts;
         $this->image = new Image();
-        $this->start();
-    }
-    public function start()
-    {
-
-        // if (!$this->isWin()) {
-        //     $this->play($this->word->originWord);
-        // } 
     }
     public function makeGuess($letter)
     {
