@@ -7,7 +7,6 @@ class Player{
     public $guessedLetters;
     public function __construct(String $name) {
         $this->name = $name;
-        //$this->attemptsLeft = $attempts;
     }
     public function decreaseAttempts(){
         $this->attemptsLeft--;

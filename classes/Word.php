@@ -18,11 +18,10 @@ class Word
     public function revealLetter($letter)
     {
         $found = false;
-        $length = mb_strlen($this->originWord); // Длина строки в символах
+        $length = mb_strlen($this->originWord);
 
         for ($i = 0; $i < $length; $i++) {
             if (mb_substr($this->originWord, $i, 1) === $letter) {
-                // Меняем соответствующую букву в $displayedWord
                 $this->displayedWord =
                     mb_substr($this->displayedWord, 0, $i) . $letter .
                     mb_substr($this->displayedWord, $i + 1);

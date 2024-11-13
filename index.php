@@ -35,18 +35,18 @@ function start()
         $letter = mb_strtolower(readline("Enter letter: "));
         $game->makeGuess($letter);
         if ($game->isGameOver()) {
-            echo 'Закончились ходы, вы проиграли! Слово было: '.$game->word->originWord;
+            echo 'The attempts finished, you lost! Слово было: '.$game->word->originWord;
             echo PHP_EOL;
             break;
         }
         if ($game->isWin()) {
-            echo 'Поздравляем! Вы угадали слово: ' . $game->word->originWord;
+            echo 'Congratulation! You guessed word: ' . $game->word->originWord;
             echo PHP_EOL;
             break;
         }
         echo PHP_EOL;
         print_r($game->word->getDisplayedWord());
-        echo PHP_EOL . 'Осталось попыток: ';
+        echo PHP_EOL . 'Attempts left: ';
         print_r($game->player->attemptsLeft);
         echo PHP_EOL;
         // echo PHP_EOL;
@@ -55,11 +55,11 @@ function start()
     }
 }
 while (true) {
-    $exit = mb_strtolower(readline("Повторить? (y / n): "));
+    $exit = mb_strtolower(readline("Try again? (y / n): "));
     if ($exit === 'y') {
         start();
     } else {
-        echo "Спасибо за игру!";
+        echo "Thank you for game!";
         break;
     }
 }

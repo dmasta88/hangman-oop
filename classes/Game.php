@@ -6,13 +6,11 @@ class Game
 {
     public $word;
     public $player;
-    public $attempts;
     public $image;
     public function __construct(Word $word, Player $player, Int $attempts = 6)
     {
         $this->word = $word;
         $this->player = $player;
-        $this->attempts= $attempts;
         $this->player->attemptsLeft = $attempts;
         $this->image = new Image();
     }
