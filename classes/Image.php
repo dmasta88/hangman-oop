@@ -5,7 +5,59 @@ namespace classes;
 class Image
 {
     public $state = 0;
-    public $images = [
+    public $type;
+    public $imagesWeb = [
+        "<pre></pre>",
+        "<pre>
+                      ______
+                      |    |
+                           |
+                           |
+                           |
+                           - 
+        </pre>",
+        "<pre>
+                      ______
+                      |    |
+                      o    |
+                           |
+                           |
+                           - 
+        </pre>",
+        "<pre>
+                      ______
+                      |    |
+                      o    |
+                      |    |
+                           |
+                           - 
+        </pre>",
+        "<pre>
+                      ______
+                      |    |
+                      o    |
+                     /|\\  |
+                           |
+                           - 
+        </pre>",
+        "<pre>
+                      ______
+                      |    |
+                      o    |
+                     /|\   |
+                     /     |
+                           - 
+        </pre>",
+        "<pre>
+                      ______
+                      |    |
+                      o    |
+                     /|\\  |
+                     / \\  |
+                           - 
+        </pre>",
+    ];
+    public $imagesConsole = [
         "" . PHP_EOL,
         "
                   -----|
@@ -45,9 +97,18 @@ class Image
                       /|\   |
                       / \     - " . PHP_EOL,
     ];
+    public function __construct($type)
+    {
+        $this->type = $type;
+    }
     public function print()
     {
-        echo $this->images[$this->state];
+        if ($this->type == 'console') {
+            echo $this->imagesConsole[$this->state];
+        }
+        elseif ($this->type == 'web'){
+            echo $this->imagesWeb[$this->state];
+        }
     }
     public function update()
     {

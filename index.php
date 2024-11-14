@@ -14,7 +14,7 @@ function start()
     $randomWord = new RandomWord();
     $word = new Word($randomWord->getRandomWord());
     $player = new Player('Alex');
-    $game = new Game($word, $player, 6);
+    $game = new Game($word, $player, 6, 'console');
 
     while (true) {
         $letter = mb_strtolower(readline("Enter letter: "));

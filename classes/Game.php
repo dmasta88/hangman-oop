@@ -7,12 +7,12 @@ class Game
     public $word;
     public $player;
     public $image;
-    public function __construct(Word $word, Player $player, Int $attempts = 6)
+    public function __construct(Word $word, Player $player, Int $attempts = 6, String $type = 'console')
     {
         $this->word = $word;
         $this->player = $player;
         $this->player->attemptsLeft = $attempts;
-        $this->image = new Image();
+        $this->image = new Image($type);
     }
     public function makeGuess($letter)
     {
