@@ -6,7 +6,7 @@ class Word
 {
     public $originWord;
     public $displayedWord;
-    public function __construct($randomWord)
+    public function __construct(String $randomWord)
     {
         $this->originWord = $randomWord;
         $this->createMask($this->originWord);

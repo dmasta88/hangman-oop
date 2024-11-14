@@ -23,25 +23,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['letter'])) {
     $letter = mb_strtolower($_POST['letter']);
     $game->makeGuess($letter);
 }
-if ($game->isGameOver()) {
-    echo '<br>';
-    echo 'The attempts finished, you lost! Word: ' . $game->word->originWord;
-    echo '<br>';
-    session_destroy();
-    //break;
-}
 if ($game->isWin()) {
     echo 'Congratulation! You guessed word: ';
-    echo '<br>';
     session_destroy();
     //break;
 }
-$game = $_SESSION['game'];
-echo '<br>';
-print_r($game->word->getDisplayedWord());
-echo '<br>' . 'Attempts left: ';
-print_r($game->player->attemptsLeft);
-echo '<br>';
+if ($game->isGameOver()) {
+    echo '<br>';
+    echo 'The attempts finished, you lost! Word: <strong>' . $game->word->originWord . '</strong>';
+    echo '<br>';
+    session_destroy();
+    //break;
+} else {
+    $game = $_SESSION['game'];
+    echo '<br><strong>';
+    print_r($game->word->getDisplayedWord());
+    echo '</strong><br>' . 'Attempts left: ';
+    print_r($game->player->attemptsLeft);
+    echo '<br>';
+}
+
 
 // while (true) {
 //     $exit = mb_strtolower(readline("Try again? (y / n): "));

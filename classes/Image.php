@@ -36,7 +36,7 @@ class Image
                       ______
                       |    |
                       o    |
-                     /|\\  |
+                     /|\   |
                            |
                            - 
         </pre>",
@@ -52,8 +52,8 @@ class Image
                       ______
                       |    |
                       o    |
-                     /|\\  |
-                     / \\  |
+                     /|\   |
+                     / \   |
                            - 
         </pre>",
     ];
@@ -97,7 +97,7 @@ class Image
                       /|\   |
                       / \     - " . PHP_EOL,
     ];
-    public function __construct($type)
+    public function __construct(String $type)
     {
         $this->type = $type;
     }
